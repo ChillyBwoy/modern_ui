@@ -21,6 +21,7 @@ defmodule ModernUI do
       import ModernUI.Components.Error
       import ModernUI.Components.Flash
       import ModernUI.Components.FormField
+      import ModernUI.Components.Header
       import ModernUI.Components.Icon
       import ModernUI.Components.Input
       import ModernUI.Components.Modal
