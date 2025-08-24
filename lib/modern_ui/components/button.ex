@@ -62,7 +62,10 @@ defmodule ModernUI.Components.Button do
       variant="none"
       {@rest}
     >
-      <span style={~c"background-image: url(/images/#{@provider}.svg)"} class="size-5 bg-cover" />
+      <span
+        style={~c"background-image: url(/modern_ui_static/images/#{@provider}.svg)"}
+        class="size-5 bg-cover"
+      />
       <span>{render_slot(@inner_block)}</span>
     </.button>
     """

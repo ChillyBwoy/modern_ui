@@ -8,13 +8,14 @@ const path = require("path");
  * https://pictogrammers.com/library/mdi/
  */
 module.exports = plugin(({ matchComponents, theme }) => {
-  const iconsDir = path.join(__dirname, "../../deps/materialdesignicons/svg");
-  const values = {};
+  const iconsDir = path.join("./deps/materialdesignicons/svg");
+  const files = fs.readdirSync(iconsDir);
 
-  fs.readdirSync(iconsDir).forEach((file) => {
+  const values = {};
+  for (const file of files) {
     const name = path.basename(file, ".svg");
     values[name] = { name, fullPath: path.join(iconsDir, file) };
-  });
+  }
 
   matchComponents(
     {
