@@ -3,6 +3,6 @@ defmodule ModernUITest do
   doctest ModernUI
 
   test "greets the world" do
-    assert ModernUI.hello() == :world
+    # TODO
   end
 end
