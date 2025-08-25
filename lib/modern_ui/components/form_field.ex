@@ -7,12 +7,14 @@ defmodule ModernUI.Components.FormField do
   alias ModernUI.Common.Error
   alias ModernUI.Components.ErrorMessage
 
+  @position_choices ~w(top right left)
+
   attr :id, :any, default: nil
 
   attr :field, Phoenix.HTML.FormField,
     doc: "a form field struct retrieved from the form, for example: @form[:email]"
 
-  attr :position, :atom, values: [:top, :right, :left], default: :top
+  attr :position, :string, values: @position_choices, default: "top"
   attr :rest, :global
 
   slot :label, required: true
@@ -47,12 +49,12 @@ defmodule ModernUI.Components.FormField do
     """
   end
 
-  attr :position, :atom, values: [:top, :right, :left], required: true
+  attr :position, :string, values: @position_choices, required: true
 
   slot :label, required: true
   slot :inner_block, required: true
 
-  defp form_field_content(%{position: :top} = assigns) do
+  defp form_field_content(%{position: "top"} = assigns) do
     ~H"""
     <label class="flex flex-col gap-1">
       <span
@@ -66,7 +68,7 @@ defmodule ModernUI.Components.FormField do
     """
   end
 
-  defp form_field_content(%{position: :right} = assigns) do
+  defp form_field_content(%{position: "right"} = assigns) do
     ~H"""
     <label class="flex items-center gap-1">
       <span
@@ -80,7 +82,7 @@ defmodule ModernUI.Components.FormField do
     """
   end
 
-  defp form_field_content(%{position: :left} = assigns) do
+  defp form_field_content(%{position: "left"} = assigns) do
     ~H"""
     <label class="flex items-center gap-1">
       {render_slot(@inner_block)}

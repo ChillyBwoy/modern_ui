@@ -5,7 +5,6 @@ defmodule ModernUI.Components.Modal do
 
   use ModernUI, :component
 
-  alias Phoenix.LiveView.JS
   alias ModernUI.Components.Icon
 
   attr :id, :string, required: true
@@ -13,7 +12,7 @@ defmodule ModernUI.Components.Modal do
   attr :rest, :global
 
   attr :size, :string,
-    values: ["default", "auto"],
+    values: ~w(default auto),
     default: "default"
 
   slot :inner_block, required: true

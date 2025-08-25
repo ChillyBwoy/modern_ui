@@ -4,8 +4,6 @@ defmodule ModernUI.Components.Flash do
   """
   use ModernUI, :component
 
-  alias Phoenix.LiveView.JS
-
   alias ModernUI.Components.Icon
   alias ModernUI.Common.ViewHelpers
 

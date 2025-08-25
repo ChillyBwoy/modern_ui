@@ -4,7 +4,6 @@ defmodule ModernUI.Components.DropdownMenu do
   """
   use ModernUI, :component
 
-  alias Phoenix.LiveView.JS
   alias ModernUI.Common.ViewHelpers
   alias ModernUI.Components.Icon
 

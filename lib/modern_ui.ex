@@ -18,7 +18,7 @@ defmodule ModernUI do
     quote do
       import ModernUI.Components.Button
       import ModernUI.Components.DropdownMenu
-      import ModernUI.Components.Error
+      import ModernUI.Components.ErrorMessage
       import ModernUI.Components.Flash
       import ModernUI.Components.FormField
       import ModernUI.Components.Header
