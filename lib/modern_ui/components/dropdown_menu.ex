@@ -5,7 +5,7 @@ defmodule ModernUI.Components.DropdownMenu do
   use ModernUI, :component
 
   alias Phoenix.LiveView.JS
-  alias ModernUI.Utils
+  alias ModernUI.Common.ViewHelpers
   alias ModernUI.Components.Icon
 
   attr :id, :string, required: true
@@ -23,13 +23,13 @@ defmodule ModernUI.Components.DropdownMenu do
     <div
       id={"dropdown-#{@id}"}
       class="inline-flex h-max w-max relative"
-      phx-window-keydown={Utils.hide("#dropdown-#{@id}-body")}
+      phx-window-keydown={ViewHelpers.hide("#dropdown-#{@id}-body")}
       phx-key="escape"
-      phx-click-away={Utils.hide("#dropdown-#{@id}-body")}
+      phx-click-away={ViewHelpers.hide("#dropdown-#{@id}-body")}
     >
       <button
         type="button"
-        phx-click={Utils.toggle("#dropdown-#{@id}-body")}
+        phx-click={ViewHelpers.toggle("#dropdown-#{@id}-body")}
         class="hover:bg-secondary-light rounded-full text-secondary size-8 cursor-pointer flex items-center justify-center"
       >
         <Icon.icon name="mdi-dots-vertical" size="lg" />

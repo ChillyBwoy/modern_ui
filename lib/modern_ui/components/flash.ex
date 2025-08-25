@@ -5,8 +5,9 @@ defmodule ModernUI.Components.Flash do
   use ModernUI, :component
 
   alias Phoenix.LiveView.JS
+
   alias ModernUI.Components.Icon
-  alias ModernUI.Utils
+  alias ModernUI.Common.ViewHelpers
 
   attr :id, :string, doc: "the optional id of flash container"
   attr :flash, :map, default: %{}, doc: "the map of flash messages to display"
@@ -46,7 +47,7 @@ defmodule ModernUI.Components.Flash do
           @kind == :info && "bg-info-light text-info-dark ring-info",
           @kind == :error && "bg-danger-light text-danger-dark ring-danger"
         ]}
-        phx-click={JS.push("lv:clear-flash", value: %{key: @kind}) |> Utils.hide("##{@id}")}
+        phx-click={JS.push("lv:clear-flash", value: %{key: @kind}) |> ViewHelpers.hide("##{@id}")}
       >
         <Icon.icon name="mdi-close" size="sm" />
       </button>

@@ -4,7 +4,7 @@ defmodule ModernUI.Components.Input do
   """
   use ModernUI, :component
 
-  alias ModernUI.Components.Error
+  alias ModernUI.Common.Error
 
   attr :id, :any, default: nil
   attr :name, :any

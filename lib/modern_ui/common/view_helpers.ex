@@ -1,4 +1,4 @@
-defmodule ModernUI.Utils do
+defmodule ModernUI.Common.ViewHelpers do
   alias Phoenix.LiveView.JS
 
   def show(js \\ %JS{}, selector) do

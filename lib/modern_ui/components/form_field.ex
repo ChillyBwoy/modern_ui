@@ -4,7 +4,8 @@ defmodule ModernUI.Components.FormField do
   """
   use ModernUI, :component
 
-  alias ModernUI.Components.Error
+  alias ModernUI.Common.Error
+  alias ModernUI.Components.ErrorMessage
 
   attr :id, :any, default: nil
 
@@ -34,9 +35,13 @@ defmodule ModernUI.Components.FormField do
         {render_slot(@inner_block)}
       </.form_field_content>
       <div :if={@errors != []} class="flex flex-col gap-1">
-        <Error.error :for={err <- @errors} class="text-xs" data-testid="form-field-error">
+        <ErrorMessage.error_message
+          :for={err <- @errors}
+          class="text-xs"
+          data-testid="form-field-error"
+        >
           {err}
-        </Error.error>
+        </ErrorMessage.error_message>
       </div>
     </div>
     """
