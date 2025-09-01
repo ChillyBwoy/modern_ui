@@ -76,6 +76,7 @@ defmodule Showcase.MixProject do
       "assets.build": ["compile", "tailwind showcase", "esbuild showcase"],
       "assets.deploy": [
         "tailwind showcase --minify",
+        "tailwind storybook --minify",
         "esbuild showcase --minify",
         "phx.digest"
       ],

@@ -16,7 +16,8 @@ config :showcase, ShowcaseWeb.Endpoint,
   secret_key_base: "H6t+59bW+cGyRWFDJLx8Ut6sNkf8775B5jXDUrVvB0mmVNFRUeYh64nHIN6yfc9U",
   watchers: [
     esbuild: {Esbuild, :install_and_run, [:showcase, ~w(--sourcemap=inline --watch)]},
-    tailwind: {Tailwind, :install_and_run, [:showcase, ~w(--watch)]}
+    tailwind: {Tailwind, :install_and_run, [:showcase, ~w(--watch)]},
+    storybook_tailwind: {Tailwind, :install_and_run, [:storybook, ~w(--watch)]}
   ]
 
 # ## SSL Support
@@ -48,7 +49,8 @@ config :showcase, ShowcaseWeb.Endpoint,
     web_console_logger: true,
     patterns: [
       ~r"priv/static/(?!uploads/).*(js|css|png|jpeg|jpg|gif|svg)$",
-      ~r"lib/showcase_web/(?:controllers|live|components|router)/?.*\.(ex|heex)$"
+      ~r"lib/showcase_web/(?:controllers|live|components|router)/?.*\.(ex|heex)$",
+      ~r"storybook/.*(exs)$"
     ]
   ]
 
