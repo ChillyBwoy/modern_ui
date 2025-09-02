@@ -1,8 +1,10 @@
 @import "tailwindcss";
+@import "../../../assets/css/app.css";
 
 @source "../../lib/showcase_web/**/*.{ex,heex}";
 @source "../js/**.js";
 @source "../storybook/**/*.*exs";
+@source "../../..";
 
 /*
  * Put your component styling within the Tailwind utilities layer. 

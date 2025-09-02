@@ -18,7 +18,10 @@ defmodule ModernUI.Components.FormField do
   attr :rest, :global
 
   slot :label, required: true
-  slot :inner_block, required: true
+
+  slot :content, required: true do
+    attr :field, Phoenix.HTML.FormField
+  end
 
   def form_field(%{field: %Phoenix.HTML.FormField{} = field} = assigns) do
     errors = if Phoenix.Component.used_input?(field), do: field.errors, else: []
@@ -34,7 +37,7 @@ defmodule ModernUI.Components.FormField do
     <div class="flex flex-col gap-1" {@rest}>
       <.form_field_content position={@position}>
         <:label>{render_slot(@label)}</:label>
-        {render_slot(@inner_block)}
+        {render_slot(@content, @field)}
       </.form_field_content>
       <div :if={@errors != []} class="flex flex-col gap-1">
         <ErrorMessage.error_message

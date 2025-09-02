@@ -10,10 +10,9 @@
 //   window.storybook = { Hooks, Params, Uploaders };
 // })();
 
-
 // If your components require alpinejs, you'll need to start
 // alpine after the DOM is loaded and pass in an onBeforeElUpdated
-// 
+//
 // import Alpine from 'alpinejs'
 // window.Alpine = Alpine
 // document.addEventListener('DOMContentLoaded', () => {
@@ -33,3 +32,8 @@
 //     }
 //   };
 // })();
+
+import * as ModernUIHooks from "../../../priv/modern_ui_static/js/modern_ui.mjs";
+(function () {
+  window.storybook = { Hooks: ModernUIHooks };
+})();

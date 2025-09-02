@@ -59,7 +59,8 @@ defmodule Showcase.MixProject do
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.2.0"},
       {:bandit, "~> 1.5"},
-      {:phoenix_storybook, "~> 0.9.0"}
+      {:phoenix_storybook, "~> 0.9.0"},
+      {:modern_ui, path: ".."}
     ]
   end
 
