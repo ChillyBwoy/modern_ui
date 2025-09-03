@@ -17,6 +17,6 @@ defmodule ShowcaseWeb.Router do
 
   scope "/", ShowcaseWeb do
     pipe_through(:browser)
-    live_storybook("/storybook", backend_module: ShowcaseWeb.Storybook)
+    live_storybook("/", backend_module: ShowcaseWeb.Storybook)
   end
 end

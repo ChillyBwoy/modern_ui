@@ -1,4 +1,4 @@
-defmodule Storybook.Components.Base.Icon do
+defmodule Storybook.Components.Core.Icon do
   use PhoenixStorybook.Story, :component
 
   def function, do: &ModernUI.Components.Icon.icon/1

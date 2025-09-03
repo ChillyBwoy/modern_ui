@@ -1,4 +1,4 @@
-defmodule Storybook.Components.Base.DropdownMenu do
+defmodule Storybook.Components.UI.DropdownMenu do
   use PhoenixStorybook.Story, :component
 
   def function, do: &ModernUI.Components.DropdownMenu.dropdown_menu/1
