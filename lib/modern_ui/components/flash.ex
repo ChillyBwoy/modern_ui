@@ -24,19 +24,21 @@ defmodule ModernUI.Components.Flash do
       id={@id}
       role="alert"
       class={[
-        "fixed top-4 right-4 text-wrap w-80 sm:w-96 max-w-80 sm:max-w-96 z-50 rounded-lg p-3 ring-1 grid grid-cols-[1fr_auto] gap-1 group",
+        "fixed top-4 right-4 text-wrap w-80 sm:w-96 max-w-80 sm:max-w-96 z-50 rounded-lg p-3 ring-1 group",
         @kind == :info && "bg-info-light text-info-dark ring-info",
         @kind == :error && "bg-danger-light text-danger-dark ring-danger"
       ]}
       {@rest}
     >
-      <div class="flex flex-col gap-2">
-        <p :if={@title} class="font-semibold">{@title}</p>
-        <p>{msg}</p>
-      </div>
+      <div class="grid grid-cols-[1fr_auto] gap-1">
+        <div class="flex flex-col gap-2">
+          <p :if={@title} class="font-semibold">{@title}</p>
+          <p>{msg}</p>
+        </div>
 
-      <div class="flex items-center justify-center">
-        <Icon.icon name="mdi-information" size="lg" />
+        <div class="flex items-center justify-center">
+          <Icon.icon name="mdi-information" size="lg" />
+        </div>
       </div>
       <button
         type="button"
