@@ -37,7 +37,7 @@ defmodule ModernUI.Components.Modal do
         >
           <button
             type="button"
-            data-type="ModalDialog.close"
+            data-type="ModernUI.ModalDialog.close"
             data-testid="modal-dialog-close"
             class="flex items-center opacity-20 hover:opacity-40 cursor-pointer absolute top-4 right-4"
           >

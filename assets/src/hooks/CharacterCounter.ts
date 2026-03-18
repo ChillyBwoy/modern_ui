@@ -1,8 +1,8 @@
 import { Hook } from "phoenix_live_view";
 
 const SELECTOR = {
-  input: "[data-type='CharacterCounter.input']",
-  counter: "[data-type='CharacterCounter.counter']",
+  input: "[data-type='ModernUI.CharacterCounter.input']",
+  counter: "[data-type='ModernUI.CharacterCounter.counter']",
 } as const;
 
 const ATTRS = {

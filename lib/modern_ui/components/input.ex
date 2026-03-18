@@ -102,13 +102,13 @@ defmodule ModernUI.Components.Input do
       id={"#{@id}-container"}
       class="relative"
       data-max-length={@maxlength}
-      phx-hook={@has_counter && "CharacterCounter"}
+      phx-hook={@has_counter && "ModernUI.CharacterCounter"}
     >
       <textarea
         id={@id}
         name={@name}
         rows="5"
-        data-type={@has_counter && "CharacterCounter.input"}
+        data-type={@has_counter && "ModernUI..CharacterCounter.input"}
         class={[
           "bg-form-background text-secondary-dark placeholder:text-secondary-light disabled:border-secondary-dark/20 disabled:text-secondary-light block w-full rounded-md border px-2 focus:ring-2 focus:outline-none",
           @errors == [] && "border-secondary-light focus:ring-primary-light",
@@ -142,14 +142,14 @@ defmodule ModernUI.Components.Input do
       class="relative"
       id={"#{@id}-container"}
       data-max-length={@maxlength}
-      phx-hook={@has_counter && "CharacterCounter"}
+      phx-hook={@has_counter && "ModernUI.CharacterCounter"}
     >
       <input
         type={@type}
         name={@name}
         id={@id}
         value={@normalized_value}
-        data-type={@has_counter && "CharacterCounter.input"}
+        data-type={@has_counter && "ModernUI.CharacterCounter.input"}
         class={[
           "bg-form-background text-secondary-dark placeholder:text-secondary-light disabled:border-secondary-dark/20 disabled:text-secondary-light block h-9 w-full rounded-md border focus:ring-2 focus:outline-none",
           @errors == [] && "border-secondary-light focus:ring-primary-light",
@@ -181,7 +181,7 @@ defmodule ModernUI.Components.Input do
         "absolute top-px bottom-px right-px items-center justify-center rounded-r-md w-14",
       @type == "textarea" && "justify-end py-1"
     ]}>
-      <span data-type="CharacterCounter.counter">{@value}</span>
+      <span data-type="ModernUI.CharacterCounter.counter">{@value}</span>
       <span>/</span>
       <span>{@maxlength}</span>
     </div>
