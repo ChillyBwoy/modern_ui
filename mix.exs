@@ -9,7 +9,8 @@ defmodule ModernUI.MixProject do
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       aliases: aliases(),
-      package: package()
+      package: package(),
+      description: description()
     ]
   end
 
@@ -20,14 +21,25 @@ defmodule ModernUI.MixProject do
     ]
   end
 
+  defp description do
+    "A collection of components for Phoenix LiveView."
+  end
+
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
       {:esbuild, "~> 0.10", runtime: Mix.env() == :dev},
       {:gettext, "~> 0.26", runtime: Mix.env() == :dev},
-      {:materialdesignicons,
-       github: "Templarian/MaterialDesign", sparse: "svg", app: false, compile: false, depth: 1},
       {:phoenix_live_view, "~> 1.1.0", runtime: Mix.env() == :dev},
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
+      {:materialdesignicons,
+       github: "Templarian/MaterialDesign",
+       sparse: "svg",
+       app: false,
+       compile: false,
+       depth: 1,
+       only: [:dev, :test],
+       runtime: false},
       {:tailwind, "~> 0.3", runtime: Mix.env() == :dev}
     ]
   end

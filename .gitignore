@@ -22,6 +22,8 @@ modern_ui-*.tar
 # Temporary files, for example, from tests.
 /tmp/
 
+/.elixir_ls/
+
 .vscode
 
 .DS_Store
