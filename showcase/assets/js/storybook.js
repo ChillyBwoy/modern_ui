@@ -33,7 +33,8 @@
 //   };
 // })();
 
-import * as ModernUIHooks from "../../../priv/modern_ui_static/js/modern_ui.mjs";
+import ModernUIHooks from "../../../priv/modern_ui_static/js/modern_ui.mjs";
+
 (function () {
   window.storybook = { Hooks: ModernUIHooks };
 })();

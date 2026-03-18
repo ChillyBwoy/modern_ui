@@ -15,8 +15,8 @@ var SmoothScroll = {
 
 // src/hooks/CharacterCounter.ts
 var SELECTOR = {
-  input: "[data-type='CharacterCounter.input']",
-  counter: "[data-type='CharacterCounter.counter']"
+  input: "[data-type='ModernUI.CharacterCounter.input']",
+  counter: "[data-type='ModernUI.CharacterCounter.counter']"
 };
 var ATTRS = {
   maxLengthVal: "data-max-length"
@@ -75,7 +75,7 @@ var CharacterCounter = {
 
 // src/hooks/ModalDialog.ts
 var SELECTOR2 = {
-  close: "[data-type='ModalDialog.close']"
+  close: "[data-type='ModernUI.ModalDialog.close']"
 };
 var ATTRS2 = {
   onCancel: "data-dialog-on-cancel"
@@ -100,9 +100,14 @@ var ModalDialog = {
     $dialog.showModal();
   }
 };
+
+// src/hooks/index.ts
+var hooks_default = {
+  "ModernUI.SmoothScroll": SmoothScroll,
+  "ModernUI.CharacterCounter": CharacterCounter,
+  "ModernUI.ModalDialog": ModalDialog
+};
 export {
-  CharacterCounter,
-  ModalDialog,
-  SmoothScroll
+  hooks_default as default
 };
 //# sourceMappingURL=modern_ui.mjs.map

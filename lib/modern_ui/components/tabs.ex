@@ -19,7 +19,7 @@ defmodule ModernUI.Components.Tabs do
       <ul
         id={@id}
         class="no-scrollbar scroll-container-h flex w-full flex-nowrap"
-        phx-hook="SmoothScroll"
+        phx-hook="ModernUI.SmoothScroll"
       >
         <li
           :for={tab <- @tab}

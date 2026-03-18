@@ -1,7 +1,7 @@
 import { Hook } from "phoenix_live_view";
 
 const SELECTOR = {
-  close: "[data-type='ModalDialog.close']",
+  close: "[data-type='ModernUI.ModalDialog.close']",
 } as const;
 
 const ATTRS = {
